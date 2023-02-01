@@ -32,11 +32,7 @@ const ImageDefault = (props: ImageProps): JSX.Element => (
 export const Banner = (props: ImageProps): JSX.Element => {
   const { sitecoreContext } = useSitecoreContext();
   const backgroundStyle = { backgroundImage: `url('${props?.fields?.Image?.value?.src}')` };
-  const modifyImageProps = {
-    ...props.fields.Image,
-    editable: props?.fields?.Image?.editable
-  };
-  const Image = () => (modifyImageProps.editable ? getEEMarkup(modifyImageProps) : null);
+  const Image = () => (props.fields.Image.editable ? <JssImage field={props.fields.Image} /> : null);
 
   return (
     <div className={`component hero-banner ${props.params.styles}`}>
