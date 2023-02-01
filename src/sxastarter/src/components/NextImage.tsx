@@ -75,6 +75,7 @@ export const NextImage: React.FC<NextImageProps> = ({
       ...imageProps,
       editable: false,
     };
+    console.log('YAY THIS WORKS');
     return (
       <span className="sc-image-wrapper">
         <Image loader={loader} {...modifiedProps} />
