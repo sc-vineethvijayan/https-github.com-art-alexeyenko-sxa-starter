@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image as JssImage,
   Link as JssLink,
   ImageField,
   Field,
@@ -8,7 +7,8 @@ import {
   Text,
   useSitecoreContext,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-import { getEEMarkup } from '@sitecore-jss/sitecore-jss-react';
+
+import { NextImage as JssImage } from './NextImage';
 
 interface Fields {
   Image: ImageField;
@@ -32,7 +32,8 @@ const ImageDefault = (props: ImageProps): JSX.Element => (
 export const Banner = (props: ImageProps): JSX.Element => {
   const { sitecoreContext } = useSitecoreContext();
   const backgroundStyle = { backgroundImage: `url('${props?.fields?.Image?.value?.src}')` };
-  const Image = () => (props.fields.Image.editable ? <JssImage field={props.fields.Image} /> : null);
+  const Image = () =>
+    props.fields.Image.editable ? <JssImage field={props.fields.Image} /> : null;
 
   return (
     <div className={`component hero-banner ${props.params.styles}`}>
