@@ -35,8 +35,6 @@ export const Banner = (props: ImageProps): JSX.Element => {
   const modifyImageProps = {
     ...props.fields.Image,
     editable: props?.fields?.Image?.editable
-      ?.replace(`width="${props?.fields?.Image?.value?.width}"`, 'width="100%"')
-      .replace(`height="${props?.fields?.Image?.value?.height}"`, 'height="100%"'),
   };
   const Image = () => (modifyImageProps.editable ? getEEMarkup(modifyImageProps) : null);
 
