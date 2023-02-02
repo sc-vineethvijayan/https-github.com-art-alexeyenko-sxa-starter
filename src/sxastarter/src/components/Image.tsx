@@ -36,7 +36,8 @@ export const Banner = (props: ImageProps): JSX.Element => {
     props.fields.Image.editable ? <JssImage field={props.fields.Image} /> : null;
 
   return (
-    <div className={`component hero-banner ${props.params.styles} sc-change`}>
+    <div className={`component hero-banner ${props.params.styles} `}>
+      <p>banner</p>
       <div className="component-content sc-sxa-image-hero-banner" style={backgroundStyle}>
         {sitecoreContext.pageEditing ? <Image /> : ''}
       </div>
