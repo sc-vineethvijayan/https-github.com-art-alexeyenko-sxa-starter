@@ -1,5 +1,3 @@
-// eslint-disable-next-line spaced-comment
-/// <reference types="../../global" />
 import Cache, { CacheInstance } from 'sync-disk-cache';
 import os from 'os';
 import { EditingData } from './editing-data';
