@@ -1,4 +1,4 @@
-import { EditingDataMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
+import { EditingDataMiddleware } from 'lib/editing-temp/editing-data-middleware';
 
 /**
  * This Next.js API route is used to handle Sitecore editor data storage and retrieval by key

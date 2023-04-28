@@ -1,4 +1,4 @@
-import { EditingRenderMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
+import { EditingRenderMiddleware } from 'lib/editing-temp/editing-render-middleware';
 
 /**
  * This Next.js API route is used to handle POST requests from Sitecore editors.
