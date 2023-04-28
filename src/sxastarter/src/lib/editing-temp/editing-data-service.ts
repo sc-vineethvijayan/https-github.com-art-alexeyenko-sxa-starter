@@ -1,7 +1,7 @@
 import { AxiosDataFetcher, debug } from '@sitecore-jss/sitecore-jss';
 import { EditingData } from './editing-data';
 import { EditingDataCache, editingDataDiskCache } from './editing-data-cache';
-import { getJssEditingSecret } from './utils';
+import { getJssEditingSecret, tryGetVercelProtectionBypass } from './utils';
 import { PreviewData } from 'next';
 
 export const QUERY_PARAM_EDITING_SECRET = 'secret';
@@ -188,6 +188,10 @@ export class ServerlessEditingDataService implements EditingDataService {
     const url = new URL(apiRoute, serverUrl);
     url.searchParams.append(QUERY_PARAM_EDITING_SECRET, getJssEditingSecret());
     url.searchParams.append('x-vercel-set-bypass-cookie', 'true');
+    const vercelSecret = tryGetVercelProtectionBypass();
+    if (vercelSecret) {
+      url.searchParams.append(VERCEL_PROTECTION_BYPASS_SECRET, vercelSecret);
+    }
     return url.toString();
   }
 }

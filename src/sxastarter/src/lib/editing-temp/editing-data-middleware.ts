@@ -1,7 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { EditingDataCache, editingDataDiskCache } from './editing-data-cache';
 import { EditingData, isEditingData } from './editing-data';
-import { QUERY_PARAM_EDITING_SECRET } from './editing-data-service';
+import {
+  QUERY_PARAM_EDITING_SECRET,
+} from './editing-data-service';
 import { getJssEditingSecret } from './utils';
 
 export interface EditingDataMiddlewareConfig {
