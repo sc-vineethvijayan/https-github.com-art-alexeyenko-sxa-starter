@@ -185,14 +185,10 @@ export class ServerlessEditingDataService implements EditingDataService {
     // Example URL format:
     //  http://localhost:3000/api/editing/data/52961eea-bafd-5287-a532-a72e36bd8a36-qkb4e3fv5x?secret=1234secret
     const apiRoute = this.apiRoute?.replace('[key]', key);
-    throw Error('haha this fails');
     const url = new URL(apiRoute, serverUrl);
     url.searchParams.append(QUERY_PARAM_EDITING_SECRET, getJssEditingSecret());
-    url.searchParams.append('x-vercel-set-bypass-cookie', 'true');
     const vercelSecret = tryGetVercelProtectionBypass();
-    if (vercelSecret) {
-      url.searchParams.append(VERCEL_PROTECTION_BYPASS_SECRET, vercelSecret);
-    }
+    url.searchParams.append(VERCEL_PROTECTION_BYPASS_SECRET, vercelSecret);
     return url.toString();
   }
 }
