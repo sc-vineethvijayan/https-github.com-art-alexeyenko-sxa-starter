@@ -43,9 +43,7 @@ export interface EditingDataService {
  * @returns {string} The unique key
  */
 export const generateKey = (data: EditingData): string => {
-  const suffix = Math.random()
-    .toString(36)
-    .substring(2, 12);
+  const suffix = Math.random().toString(36).substring(2, 12);
   return `${data.layoutData.sitecore.route?.itemId}-${suffix}`;
 };
 
