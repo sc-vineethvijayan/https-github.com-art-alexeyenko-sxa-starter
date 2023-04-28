@@ -131,11 +131,14 @@ export class EditingRenderMiddleware {
       debug.editing('fetching page route for %s', editingData.path);
       const queryStringCharacter = requestUrl.indexOf('?') === -1 ? '?' : '&';
       const pageRes = await this.dataFetcher
-        .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`, {
-          headers: {
-            Cookie: cookies.join(';'),
-          },
-        })
+        .get<string>(
+          `${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`,
+          {
+            headers: {
+              Cookie: cookies.join(';'),
+            },
+          }
+        )
         .catch((err) => {
           // We need to handle not found error provided by Vercel
           // for `fallback: false` pages
