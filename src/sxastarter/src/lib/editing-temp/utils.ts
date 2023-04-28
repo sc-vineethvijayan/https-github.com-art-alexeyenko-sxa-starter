@@ -9,7 +9,7 @@ export const getJssEditingSecret = (): string => {
 export const tryGetVercelProtectionBypass = (): string | undefined => {
   const bypassSecret = process.env.VERCEL_PROTECTION_BYPASS_SECRET;
   if (!bypassSecret || bypassSecret.length === 0) {
-    console.log('The VERCEL_PROTECTION_BYPASS_SECRET environment variable is missing or invalid.');
+    throw Error('The VERCEL_PROTECTION_BYPASS_SECRET environment variable is missing or invalid.');
   }
   return bypassSecret;
 };
