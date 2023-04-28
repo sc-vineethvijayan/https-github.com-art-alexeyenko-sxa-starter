@@ -8,8 +8,9 @@ import {
   EditingDataService,
   editingDataService,
   QUERY_PARAM_EDITING_SECRET,
+  VERCEL_PROTECTION_BYPASS_SECRET,
 } from './editing-data-service';
-import { getJssEditingSecret } from './utils';
+import { getJssEditingSecret, tryGetVercelProtectionBypass } from './utils';
 
 export interface EditingRenderMiddlewareConfig {
   /**
@@ -198,7 +199,7 @@ export class EditingRenderMiddleware {
    * @param {string} itemPath
    */
   private defaultResolvePageUrl = (serverUrl: string, itemPath: string) => {
-    return `${serverUrl}${itemPath}`;
+    return `${serverUrl}${itemPath}?${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`;
   };
 
   /**
