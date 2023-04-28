@@ -131,7 +131,7 @@ export class EditingRenderMiddleware {
       debug.editing('fetching page route for %s', editingData.path);
       const queryStringCharacter = requestUrl.indexOf('?') === -1 ? '?' : '&';
       const pageRes = await this.dataFetcher
-        .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}`, {
+        .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`, {
           headers: {
             Cookie: cookies.join(';'),
           },
@@ -140,6 +140,10 @@ export class EditingRenderMiddleware {
           // We need to handle not found error provided by Vercel
           // for `fallback: false` pages
           if (err.response.status === 404) {
+            return err.response;
+          }
+
+          if (err.response.status === 401) {
             return err.response;
           }
 
@@ -199,7 +203,7 @@ export class EditingRenderMiddleware {
    * @param {string} itemPath
    */
   private defaultResolvePageUrl = (serverUrl: string, itemPath: string) => {
-    return `${serverUrl}${itemPath}?${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`;
+    return `${serverUrl}${itemPath}`;
   };
 
   /**
