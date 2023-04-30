@@ -1,4 +1,4 @@
-import { getPublicUrl } from 'lib/editing-temp/utils';
+import { applyVercelProtection, getPublicUrl } from 'lib/editing-temp/utils';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore editors.
 // If you're not supporting Sitecore editors, you can remove this.
@@ -10,7 +10,7 @@ const Navigation = (): JSX.Element => (
       <ul>
         <li>
           <a href="https://sitecore.com">
-            <img src={`${publicUrl}/sc_logo.svg`} alt="Sitecore" />
+            <img src={`${applyVercelProtection(`${publicUrl}/sc_logo.svg`)}`} alt="Sitecore" />
           </a>
         </li>
         <li>

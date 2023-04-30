@@ -1,3 +1,5 @@
+const VERCEL_PROTECTION_BYPASS_SECRET = 'x-vercel-protection-bypass';
+
 export const getJssEditingSecret = (): string => {
   const secret = process.env.JSS_EDITING_SECRET;
   if (!secret || secret.length === 0) {
@@ -14,8 +16,13 @@ export const tryGetVercelProtectionBypass = (): string => {
   return bypassSecret;
 };
 
+export const applyVercelProtection = (url: string) => {
+  if (process.env.VERCEL_PROTECTION_BYPASS_SECRET) return url;
+  const queryStringCharacter = url.indexOf('?') === -1 ? '?' : '&';
+  return `${url}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${process.env.VERCEL_PROTECTION_BYPASS_SECRET}`;
+}
+
 export const getPublicUrl = (): string => {
-  if (process.env.VERCEL_PROTECTION_BYPASS_SECRET) return '';
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
   let url = process.env.PUBLIC_URL;

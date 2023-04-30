@@ -1,7 +1,30 @@
 const jssConfig = require('./src/temp/config');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
-const publicUrl = "";
+const getPublicUrl = () => {
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+
+  let url = process.env.PUBLIC_URL;
+  console.log(url);
+  if (url === undefined) {
+    console.warn(
+      `
+        'Warning:'
+ An PUBLIC_URL environment variable is not defined. Falling back to http://localhost:3000.`
+    );
+    url = 'http://localhost:3000';
+  } else {
+    try {
+      new URL(url);
+    } catch (error) {
+      throw new Error(`The PUBLIC_URL environment variable '${url}' is not a valid URL.`);
+    }
+  }
+  // Ensure no trailing slash
+  return url.toString().replace(/\/$/, '');
+};
+
+const publicUrl = getPublicUrl();
 
 /**
  * @type {import('next').NextConfig}
