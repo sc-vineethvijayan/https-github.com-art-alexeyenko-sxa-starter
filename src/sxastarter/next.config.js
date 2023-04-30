@@ -14,11 +14,7 @@ const getPublicUrl = () => {
     );
     url = 'http://localhost:3000';
   } else {
-    try {
-      new URL(url);
-    } catch (error) {
-      throw new Error(`The PUBLIC_URL environment variable '${url}' is not a valid URL.`);
-    }
+
   }
   // Ensure no trailing slash
   return url.toString().replace(/\/$/, '');
