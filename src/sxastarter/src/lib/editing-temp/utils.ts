@@ -20,7 +20,7 @@ export const applyVercelProtection = (url: string) => {
   if (process.env.VERCEL_PROTECTION_BYPASS_SECRET) return url;
   const queryStringCharacter = url.indexOf('?') === -1 ? '?' : '&';
   return `${url}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${process.env.VERCEL_PROTECTION_BYPASS_SECRET}`;
-}
+};
 
 export const getPublicUrl = (): string => {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
