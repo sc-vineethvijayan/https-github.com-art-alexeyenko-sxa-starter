@@ -1,8 +1,7 @@
 const jssConfig = require('./src/temp/config');
-const { getPublicUrl } = require('lib/editing-temp/utils');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
-const publicUrl = getPublicUrl();
+const publicUrl = "";
 
 /**
  * @type {import('next').NextConfig}
