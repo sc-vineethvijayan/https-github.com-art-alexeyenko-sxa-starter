@@ -155,9 +155,11 @@ export class EditingRenderMiddleware {
         });
 
       let html = pageRes.data;
+      console.info('Checkpoint 1');
       if (!html || html.length === 0) {
         throw new Error(`Failed to render html for ${requestUrl}`);
       }
+      console.info('Checkpoint 2');
 
       // replace phkey attribute with key attribute so that newly added renderings
       // show correct placeholders, so save and refresh won't be needed after adding each rendering
@@ -170,14 +172,14 @@ export class EditingRenderMiddleware {
       // certain route configurations (e.g. multiple catch-all routes).
       // The following line will trick it into thinking we're SSR, thus avoiding any router.replace.
       html = html.replace(STATIC_PROPS_ID, SERVER_PROPS_ID);
-
+      console.info('Checkpoint 3');
       if (editingData.layoutData.sitecore.context.renderingType === RenderingType.Component) {
         // Handle component rendering. Extract component markup only
         html = parse(html).getElementById(EDITING_COMPONENT_ID)?.innerHTML;
-
+        console.info('Checkpoint 4');
         if (!html) throw new Error(`Failed to render component for ${requestUrl}`);
       }
-
+      console.info('Checkpoint 5');
       const body = { html };
 
       // Return expected JSON result
