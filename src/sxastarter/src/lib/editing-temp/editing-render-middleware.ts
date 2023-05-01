@@ -137,7 +137,10 @@ export class EditingRenderMiddleware {
             headers: {
               Cookie: cookies.join(';'),
             },
-            maxRedirects: 0,
+            maxRedirects: 1,
+            validateStatus: function (status) {
+              return status >= 200 && status < 400; // default
+            },
           }
         )
         .catch((err) => {
@@ -153,7 +156,7 @@ export class EditingRenderMiddleware {
 
           throw err;
         });
-
+      console.log(pageRes);
       let html = pageRes.data;
       console.info('Checkpoint 1');
       if (!html || html.length === 0) {
