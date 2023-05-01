@@ -137,7 +137,8 @@ export class EditingRenderMiddleware {
             headers: {
               Cookie: cookies.join(';'),
             },
-          }
+            maxRedirects: 0,
+          },
         )
         .catch((err) => {
           // We need to handle not found error provided by Vercel
