@@ -132,7 +132,7 @@ export class EditingRenderMiddleware {
       const queryStringCharacter = requestUrl.indexOf('?') === -1 ? '?' : '&';
       const pageRes = await this.dataFetcher
         .get<string>(
-          `${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`,
+          `${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}&x-vercel-set-bypass-cookie=true`,
           {
             headers: {
               Cookie: cookies.join(';'),
