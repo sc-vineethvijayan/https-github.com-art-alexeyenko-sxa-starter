@@ -125,7 +125,7 @@ export class EditingRenderMiddleware {
       // Grab the Next.js preview cookies to send on to the render request
       const nextCookies = res.getHeader('Set-Cookie') as string[];
       const vercelJwtCookies = await this.getVercelJwtCookie(serverUrl);
-      console.info(vercelJwtCookies);
+      console.info([...nextCookies, ...vercelJwtCookies].join(';'));
 
       // Make actual render request for page route, passing on preview cookies.
       // Note timestamp effectively disables caching the request in Axios (no amount of cache headers seemed to do it)
@@ -136,6 +136,7 @@ export class EditingRenderMiddleware {
         .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}`, {
           headers: {
             Cookie: [...nextCookies, ...vercelJwtCookies].join(';'),
+            SetCookie: vercelJwtCookies,
           },
           maxRedirects: 0,
           validateStatus: function (status) {
