@@ -123,7 +123,9 @@ export class EditingRenderMiddleware {
       res.setPreviewData(previewData);
 
       // Grab the Next.js preview cookies to send on to the render request
-      const cookies = res.getHeader('Set-Cookie') as string[];
+      const nextCookies = res.getHeader('Set-Cookie') as string[];
+      const vercelJwtCookies = await this.getVercelJwtCookie(serverUrl);
+      console.info(vercelJwtCookies);
 
       // Make actual render request for page route, passing on preview cookies.
       // Note timestamp effectively disables caching the request in Axios (no amount of cache headers seemed to do it)
@@ -131,18 +133,15 @@ export class EditingRenderMiddleware {
       debug.editing('fetching page route for %s', editingData.path);
       const queryStringCharacter = requestUrl.indexOf('?') === -1 ? '?' : '&';
       const pageRes = await this.dataFetcher
-        .get<string>(
-          `${requestUrl}${queryStringCharacter}timestamp=${Date.now()}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}&x-vercel-set-bypass-cookie=true`,
-          {
-            headers: {
-              Cookie: cookies.join(';'),
-            },
-            maxRedirects: 0,
-            validateStatus: function (status) {
-              return status >= 200 && status < 400; // default
-            },
-          }
-        )
+        .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}`, {
+          headers: {
+            Cookie: [...nextCookies, ...vercelJwtCookies].join(';'),
+          },
+          maxRedirects: 0,
+          validateStatus: function (status) {
+            return status >= 200 && status < 400; // default
+          },
+        })
         .catch((err) => {
           // We need to handle not found error provided by Vercel
           // for `fallback: false` pages
@@ -205,6 +204,20 @@ export class EditingRenderMiddleware {
       });
     }
   };
+
+  private async getVercelJwtCookie(serverUrl: string) {
+    // ${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}&x-vercel-set-bypass-cookie=true
+    const authRes = await this.dataFetcher.get<string>(
+      `${serverUrl}?${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}&x-vercel-set-bypass-cookie=true`,
+      {
+        maxRedirects: 0,
+        validateStatus: function (status) {
+          return status >= 200 && status < 400;
+        },
+      }
+    );
+    return authRes.headers['set-cookie'] as string[];
+  }
 
   /**
    * Default page URL resolution.
