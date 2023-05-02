@@ -70,7 +70,7 @@ export const Default = (props: ImageProps): JSX.Element => {
             className="image-caption field-imagecaption"
             field={props.fields.ImageCaption}
           />
-          <img src='/public/beluga.jpg'/>
+          <img alt="beluga" src="/public/beluga.jpg" />
         </div>
       </div>
     );
