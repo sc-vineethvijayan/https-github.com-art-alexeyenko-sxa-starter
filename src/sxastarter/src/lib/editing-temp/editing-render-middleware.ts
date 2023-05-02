@@ -10,7 +10,7 @@ import {
   QUERY_PARAM_EDITING_SECRET,
   VERCEL_PROTECTION_BYPASS_SECRET,
 } from './editing-data-service';
-import { getJssEditingSecret, tryGetVercelProtectionBypass } from './utils';
+import { getJssEditingSecret } from './utils';
 
 export interface EditingRenderMiddlewareConfig {
   /**
@@ -131,15 +131,20 @@ export class EditingRenderMiddleware {
       debug.editing('fetching page route for %s', editingData.path);
       const queryStringCharacter = requestUrl.indexOf('?') === -1 ? '?' : '&';
       const pageRes = await this.dataFetcher
-        .get<string>(`${requestUrl}${queryStringCharacter}timestamp=${Date.now()}`, {
-          headers: {
-            Cookie: [...nextCookies].join(';'),
-          },
-          maxRedirects: 0,
-          validateStatus: function (status) {
-            return status >= 200 && status < 400; // default
-          },
-        })
+        .get<string>(
+          `${requestUrl}${queryStringCharacter}timestamp=${Date.now()}&${VERCEL_PROTECTION_BYPASS_SECRET}=${
+            process.env.VERCEL_PROTECTION_BYPASS_SECRET
+          }`,
+          {
+            headers: {
+              Cookie: [...nextCookies].join(';'),
+            },
+            maxRedirects: 0,
+            validateStatus: function (status) {
+              return status >= 200 && status < 400; // default
+            },
+          }
+        )
         .catch((err) => {
           // We need to handle not found error provided by Vercel
           // for `fallback: false` pages
@@ -202,20 +207,6 @@ export class EditingRenderMiddleware {
       });
     }
   };
-
-  private async getVercelJwtCookie(serverUrl: string) {
-    // ${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}&x-vercel-set-bypass-cookie=true
-    const authRes = await this.dataFetcher.get<string>(
-      `${serverUrl}?${VERCEL_PROTECTION_BYPASS_SECRET}=${tryGetVercelProtectionBypass()}`,
-      {
-        maxRedirects: 0,
-        validateStatus: function (status) {
-          return status >= 200 && status < 400;
-        },
-      }
-    );
-    return authRes.headers['set-cookie'] as string[];
-  }
 
   /**
    * Default page URL resolution.
