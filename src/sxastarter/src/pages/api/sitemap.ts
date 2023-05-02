@@ -6,8 +6,6 @@ import {
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { siteResolver } from 'lib/site-resolver';
 import config from 'temp/config';
-import { getPublicUrl } from 'lib/editing-temp/utils';
-
 const ABSOLUTE_URL_REGEXP = '^(?:[a-z]+:)?//';
 
 const sitemapApi = async (
@@ -62,7 +60,7 @@ const sitemapApi = async (
       const lastSegment = parseUrl[parseUrl.length - 1];
 
       return `<sitemap>
-        <loc>${getPublicUrl()}/${lastSegment}</loc>
+        <loc>/${lastSegment}</loc>
       </sitemap>`;
     })
     .join('');
