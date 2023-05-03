@@ -22,6 +22,20 @@ export const applyVercelProtection = (url: string) => {
   return `${url}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${process.env.VERCEL_PROTECTION_BYPASS_SECRET}`;
 };
 
+export const applyPulicUrlAndVercelProtectionBypass = (relativeUrl: string) => {
+  if (process.env.VERCEL_PROTECTION_BYPASS_SECRET) return `${getPublicUrl()}${relativeUrl}`;
+  const queryStringCharacter = relativeUrl.indexOf('?') === -1 ? '?' : '&';
+  return `${getPublicUrl()}${relativeUrl}${queryStringCharacter}${VERCEL_PROTECTION_BYPASS_SECRET}=${
+    process.env.VERCEL_PROTECTION_BYPASS_SECRET
+  }`;
+};
+
+export const getVercelProtectionBypassQueryString = () => {
+  return process.env.VERCEL_PROTECTION_BYPASS_SECRET
+    ? `${VERCEL_PROTECTION_BYPASS_SECRET}=${process.env.VERCEL_PROTECTION_BYPASS_SECRET}`
+    : '';
+};
+
 export const getPublicUrl = (): string => {
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 

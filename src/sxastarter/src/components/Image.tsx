@@ -7,7 +7,9 @@ import {
   LinkField,
   Text,
   useSitecoreContext,
+  getPublicUrl,
 } from '@sitecore-jss/sitecore-jss-nextjs';
+import { getVercelProtectionBypassQueryString } from 'lib/editing-temp/utils';
 
 interface Fields {
   Image: ImageField;
@@ -54,6 +56,8 @@ export const Default = (props: ImageProps): JSX.Element => {
   if (props.fields) {
     const Image = () => <JssImage field={props.fields.Image} />;
     const id = props.params.RenderingIdentifier;
+    const publicUrl = getPublicUrl();
+    const vercelQs = getVercelProtectionBypassQueryString();
 
     return (
       <div className={`component image ${props.params.styles}`} id={id ? id : undefined}>
@@ -70,7 +74,7 @@ export const Default = (props: ImageProps): JSX.Element => {
             className="image-caption field-imagecaption"
             field={props.fields.ImageCaption}
           />
-          <img alt="beluga" src="/beluga.jpg" />
+          <img alt="beluga" src={`${publicUrl}/beluga.jpg?${vercelQs}`} />
         </div>
       </div>
     );
