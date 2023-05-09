@@ -7,9 +7,7 @@ import {
   LinkField,
   Text,
   useSitecoreContext,
-  getPublicUrl,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-import { getVercelProtectionBypassQueryString } from 'lib/editing-temp/utils';
 
 interface Fields {
   Image: ImageField;
