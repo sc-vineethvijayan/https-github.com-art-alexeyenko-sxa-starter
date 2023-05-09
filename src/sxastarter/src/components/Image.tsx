@@ -56,8 +56,8 @@ export const Default = (props: ImageProps): JSX.Element => {
   if (props.fields) {
     const Image = () => <JssImage field={props.fields.Image} />;
     const id = props.params.RenderingIdentifier;
-    const publicUrl = getPublicUrl();
-    const vercelQs = getVercelProtectionBypassQueryString();
+    // const publicUrl = getPublicUrl();
+    // const vercelQs = getVercelProtectionBypassQueryString();
 
     return (
       <div className={`component image ${props.params.styles}`} id={id ? id : undefined}>
@@ -74,7 +74,7 @@ export const Default = (props: ImageProps): JSX.Element => {
             className="image-caption field-imagecaption"
             field={props.fields.ImageCaption}
           />
-          <img alt="beluga" src={`${publicUrl}/beluga.jpg?${vercelQs}`} />
+          <img alt="beluga" src={`/beluga.jpg`} />
         </div>
       </div>
     );
