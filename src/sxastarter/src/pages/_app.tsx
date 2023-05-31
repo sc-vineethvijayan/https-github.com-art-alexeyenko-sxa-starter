@@ -10,9 +10,9 @@ import 'assets/main.scss';
 FEAAS.External.registerComponent(BringYour, {
   properties: {
     num: {
-      type: 'number'
-    }
-  }
+      type: 'number',
+    },
+  },
 });
 FEAAS.External.registerComponent(SecondComponent);
 
