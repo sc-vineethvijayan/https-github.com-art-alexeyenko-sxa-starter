@@ -7,7 +7,13 @@ import { SecondComponent } from 'src/byoc/SecondComponent';
 
 import 'assets/main.scss';
 
-FEAAS.External.registerComponent(BringYour);
+FEAAS.External.registerComponent(BringYour, {
+  properties: {
+    num: {
+      type: 'number'
+    }
+  }
+});
 FEAAS.External.registerComponent(SecondComponent);
 
 function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element {
