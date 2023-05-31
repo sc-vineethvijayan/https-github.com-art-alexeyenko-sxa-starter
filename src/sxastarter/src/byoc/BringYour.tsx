@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default function BringYour(): JSX.Element {
+const BringYour = () => {
   return <h2>You brought this on urself</h2>;
-}
+};
+
+export default BringYour;
