@@ -76,7 +76,7 @@ export const FEaaSComponent = (props: FEaaSComponentProps): JSX.Element => {
       !computedRevision)
   ) {
     // Missing FEaaS component required props
-    return (<></>);
+    return <></>;
   }
 
   let data: string | null = null;
@@ -130,8 +130,9 @@ export async function fetchFEaaSComponentServerProps(
     };
   } catch (e) {
     console.error(
-      `Fetch FEAAS component from ${src} failed. Ensure the component revision "${params.ComponentRevision ||
-        revisionFallback}" is present`
+      `Fetch FEAAS component from ${src} failed. Ensure the component revision "${
+        params.ComponentRevision || revisionFallback
+      }" is present`
     );
     console.error(e);
     // leave revision fallback in so we can re-try with client-side rendering

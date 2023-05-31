@@ -7,7 +7,7 @@ import {
 import {
   GetServerSideComponentProps,
   GetStaticComponentProps,
-  constants
+  constants,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import React from 'react';
 
@@ -34,7 +34,10 @@ export const getStaticProps: GetStaticComponentProps = async (rendering, layoutD
     return null;
   }
   const params: FEaaSComponentParams = rendering.params || {};
-  const result = await fetchFEaaSComponentServerProps(params, layoutData.sitecore.context.pageState);
+  const result = await fetchFEaaSComponentServerProps(
+    params,
+    layoutData.sitecore.context.pageState
+  );
   return result;
 };
 
@@ -49,6 +52,9 @@ export const getServerSideProps: GetServerSideComponentProps = async (rendering,
     return null;
   }
   const params: FEaaSComponentParams = rendering.params || {};
-  const result = await fetchFEaaSComponentServerProps(params, layoutData.sitecore.context.pageState);
+  const result = await fetchFEaaSComponentServerProps(
+    params,
+    layoutData.sitecore.context.pageState
+  );
   return result;
 };
