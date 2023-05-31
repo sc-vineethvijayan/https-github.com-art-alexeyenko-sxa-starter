@@ -3,13 +3,10 @@ import { I18nProvider } from 'next-localization';
 import { SitecorePageProps } from 'lib/page-props';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import BringYour from 'src/byoc/BringYour';
-import { SecondComponent } from 'src/byoc/SecondComponent';
 
 import 'assets/main.scss';
 
 FEAAS.External.registerComponent(BringYour);
-FEAAS.External.registerComponent(SecondComponent);
-
 function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element {
   const { dictionary, ...rest } = pageProps;
 
