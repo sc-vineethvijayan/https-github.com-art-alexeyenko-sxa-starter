@@ -15,6 +15,18 @@ import { sitecorePagePropsFactory } from 'lib/page-props-factory';
 // different componentFactory method will be used based on whether page is being edited
 import { componentFactory, editingComponentFactory } from 'temp/componentFactory';
 import { sitemapFetcher } from 'lib/sitemap-fetcher';
+import * as FEAAS from '@sitecore-feaas/clientside/react';
+import BringYour from 'src/byoc/BringYour';
+// import { SecondComponent } from 'src/byoc/SecondComponent';
+
+FEAAS.External.registerComponent(BringYour, {
+  properties: {
+    num: {
+      type: 'number',
+    },
+  },
+});
+// FEAAS.External.registerComponent(SecondComponent);
 
 const SitecorePage = ({ notFound, componentProps, layoutData }: SitecorePageProps): JSX.Element => {
   useEffect(() => {
