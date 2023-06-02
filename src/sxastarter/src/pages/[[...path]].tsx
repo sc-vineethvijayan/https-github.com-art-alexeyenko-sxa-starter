@@ -20,6 +20,7 @@ import BringYour from 'src/byoc/BringYour';
 // import { SecondComponent } from 'src/byoc/SecondComponent';
 
 FEAAS.External.registerComponent(BringYour, {
+  name: 'Abracadabra',
   properties: {
     num: {
       type: 'number',
