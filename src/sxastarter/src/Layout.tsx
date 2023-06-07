@@ -38,6 +38,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
       <div className={mainClassPageEditing}>
         <header>
           <h2>NODE_ENV is ${process.env.NODE_ENV}</h2>
+          <h2>Public URL is {getPublicUrl()}</h2>
           <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
         </header>
         <main>
