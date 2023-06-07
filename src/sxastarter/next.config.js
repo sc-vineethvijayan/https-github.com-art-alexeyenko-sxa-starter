@@ -2,7 +2,7 @@ const jssConfig = require('./src/temp/config');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
 const getPublicUrl = () => {
-  if (process.env.NODE_ENV === 'development') return '';
+  if (process.env.NODE_ENV !== 'development') return '';
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
   let url = process.env.PUBLIC_URL;
