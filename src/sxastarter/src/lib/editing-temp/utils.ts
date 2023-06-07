@@ -37,7 +37,7 @@ export const getVercelProtectionBypassQueryString = () => {
 };
 
 export const getPublicUrl = (): string => {
-  if (process.env.NODE_ENV === 'development') return '';
+  if (process.env.NODE_ENV !== 'development') return '';
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
   let url = process.env.PUBLIC_URL;
