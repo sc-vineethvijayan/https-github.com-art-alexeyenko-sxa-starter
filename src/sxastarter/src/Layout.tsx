@@ -3,11 +3,7 @@
  */
 import React from 'react';
 import Head from 'next/head';
-import {
-  Placeholder,
-  LayoutServiceData,
-  Field,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { Placeholder, LayoutServiceData, Field } from '@sitecore-jss/sitecore-jss-nextjs';
 import Scripts from 'src/Scripts';
 import { getPublicUrl } from './lib/editing-temp/utils';
 
