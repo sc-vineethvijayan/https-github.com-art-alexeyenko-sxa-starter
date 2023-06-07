@@ -3,9 +3,13 @@
  */
 import React from 'react';
 import Head from 'next/head';
-import { Placeholder, LayoutServiceData, Field } from '@sitecore-jss/sitecore-jss-nextjs';
+import {
+  Placeholder,
+  LayoutServiceData,
+  Field,
+  getPublicUrl,
+} from '@sitecore-jss/sitecore-jss-nextjs';
 import Scripts from 'src/Scripts';
-import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore Experience Editor.
 // If you're not supporting the Experience Editor, you can remove this.
