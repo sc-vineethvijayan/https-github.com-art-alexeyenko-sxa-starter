@@ -41,6 +41,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
       {/* root placeholder for the app, which we add components to using route data */}
       <div className={mainClassPageEditing}>
         <header>
+          <h2>NODE_ENV is ${process.env.NODE_ENV}</h2>
           <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
         </header>
         <main>
