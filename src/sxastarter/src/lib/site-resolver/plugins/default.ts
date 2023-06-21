@@ -1,12 +1,6 @@
-import { SiteInfo, tryParseEnvValue } from '@sitecore-jss/sitecore-jss-nextjs/middleware';
+import { SiteInfo } from '@sitecore-jss/sitecore-jss-nextjs/site';
 import config from 'temp/config';
 import { SiteResolverPlugin } from '..';
-
-// Resolving from env variable, but it can be expanded or change in future if needed.
-const pointOfSale = tryParseEnvValue<Record<string, string>>(
-  process.env.NEXT_PUBLIC_CDP_POINTOFSALE,
-  { [config.defaultLanguage]: process.env.NEXT_PUBLIC_CDP_POINTOFSALE || '' }
-);
 
 class DefaultPlugin implements SiteResolverPlugin {
   exec(sites: SiteInfo[]): SiteInfo[] {
@@ -15,7 +9,6 @@ class DefaultPlugin implements SiteResolverPlugin {
       name: config.jssAppName,
       language: config.defaultLanguage,
       hostName: '*',
-      pointOfSale,
     });
 
     return sites;
