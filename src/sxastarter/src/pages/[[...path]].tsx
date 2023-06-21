@@ -61,7 +61,7 @@ const SitecorePage = ({
         {isComponentRendering ? (
           <EditingComponentPlaceholder rendering={layoutData.sitecore.route} />
         ) : (
-          <Layout layoutData={layoutData} headLinks={headLinks} />
+          <Layout layoutData={layoutData} />
         )}
       </SitecoreContext>
     </ComponentPropsContext>
