@@ -1,12 +1,10 @@
 import {
+  GetServerSideComponentProps,
+  GetStaticComponentProps,
   FEaaSComponent,
   FEaaSComponentProps,
   FEaaSComponentParams,
   fetchFEaaSComponentServerProps,
-} from './FEaaSComponent';
-import {
-  GetServerSideComponentProps,
-  GetStaticComponentProps,
   constants,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import React from 'react';
