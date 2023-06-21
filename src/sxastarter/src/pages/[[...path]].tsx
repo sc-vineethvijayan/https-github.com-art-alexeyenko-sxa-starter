@@ -28,11 +28,7 @@ FEAAS.External.registerComponent(BringYour, {
 });
 // FEAAS.External.registerComponent(SecondComponent);
 
-const SitecorePage = ({
-  notFound,
-  componentProps,
-  layoutData,
-}: SitecorePageProps): JSX.Element => {
+const SitecorePage = ({ notFound, componentProps, layoutData }: SitecorePageProps): JSX.Element => {
   useEffect(() => {
     // Since Sitecore editors do not support Fast Refresh, need to refresh editor chromes after Fast Refresh finished
     handleEditorFastRefresh();
