@@ -16,6 +16,6 @@ import './generate-plugins';
 import './generate-config';
 
 /*
-  COMPONENT BUILDER GENERATION
+  COMPONENT FACTORY GENERATION
 */
-import './generate-component-builder';
+import './generate-component-factory';
