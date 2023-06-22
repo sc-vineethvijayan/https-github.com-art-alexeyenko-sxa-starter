@@ -1,12 +1,12 @@
 import {
   GetServerSideComponentProps,
   GetStaticComponentProps,
-  FEaaSComponent,
   FEaaSComponentProps,
   FEaaSComponentParams,
   fetchFEaaSComponentServerProps,
   constants,
 } from '@sitecore-jss/sitecore-jss-nextjs';
+import { FEaaSComponent } from './FEaaSComponent';
 import React from 'react';
 
 export const Default = (props: FEaaSComponentProps): JSX.Element => {
