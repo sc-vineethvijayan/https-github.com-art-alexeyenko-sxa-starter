@@ -28,7 +28,12 @@ FEAAS.External.registerComponent(BringYour, {
 });
 // FEAAS.External.registerComponent(SecondComponent);
 
-const SitecorePage = ({ notFound, componentProps, layoutData, headLinks }: SitecorePageProps): JSX.Element => {
+const SitecorePage = ({
+  notFound,
+  componentProps,
+  layoutData,
+  headLinks,
+}: SitecorePageProps): JSX.Element => {
   useEffect(() => {
     // Since Sitecore editors do not support Fast Refresh, need to refresh editor chromes after Fast Refresh finished
     handleEditorFastRefresh();
@@ -56,7 +61,7 @@ const SitecorePage = ({ notFound, componentProps, layoutData, headLinks }: Sitec
         {isComponentRendering ? (
           <EditingComponentPlaceholder rendering={layoutData.sitecore.route} />
         ) : (
-          <Layout layoutData={layoutData} headLinks={headLinks}/>
+          <Layout layoutData={layoutData} headLinks={headLinks} />
         )}
       </SitecoreContext>
     </ComponentPropsContext>
