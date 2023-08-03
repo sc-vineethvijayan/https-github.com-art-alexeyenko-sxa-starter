@@ -1,5 +1,5 @@
 import { ComponentBuilderPlugin, ComponentBuilderPluginConfig } from '..';
-
+import { PackageDefinition, getComponentList } from '@sitecore-jss/sitecore-jss-dev-tools';
 /**
  * Provides custom packages configuration
  */
@@ -28,7 +28,8 @@ class PackagesPlugin implements ComponentBuilderPlugin {
      * const componentsPath = 'src/extra';
      * config.packages = getComponentList(componentsPath) as PackageDefinition[];
      */
-    config.packages = [];
+    const componentsPath = 'src/extra';
+    config.packages = getComponentList(componentsPath) as PackageDefinition[];
 
     return config;
   }
