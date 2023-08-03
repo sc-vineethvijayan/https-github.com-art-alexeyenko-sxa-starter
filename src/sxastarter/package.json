@@ -1,21 +1,19 @@
 {
-  "name": "sxastarter",
+  "name": "nextjs",
   "description": "Application utilizing Sitecore JavaScript Services and Next.js",
-  "version": "21.2.3",
+  "version": "21.3.0-canary",
   "private": true,
   "config": {
-    "appName": "sxastarter",
+    "appName": "nextjs",
     "rootPlaceholders": [
-      "jss-main"
+      "Nextjs-jss-main"
     ],
     "sitecoreConfigPath": "/App_Config/Include/zzz",
     "graphQLEndpointPath": "/sitecore/api/graph/edge",
     "language": "en",
     "templates": [
       "nextjs",
-      "nextjs-sxa",
-      "nextjs-personalize",
-      "nextjs-multisite"
+      "nextjs-sxa"
     ]
   },
   "engines": {
@@ -35,9 +33,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sitecore-feaas/clientside": "^0.3.6",
-    "@sitecore-jss/sitecore-jss-nextjs": "~21.2.3",
-    "@sitecore/engage": "^0.4.0",
+    "@sitecore-feaas/clientside": "^0.3.0",
+    "@sitecore-jss/sitecore-jss-nextjs": "~21.3.0-canary",
     "bootstrap": "^5.1.3",
     "font-awesome": "^4.7.0",
     "graphql": "~15.8.0",
@@ -58,8 +55,8 @@
     "@graphql-codegen/typescript-operations": "^2.5.12",
     "@graphql-codegen/typescript-resolvers": "^2.7.12",
     "@graphql-typed-document-node/core": "^3.1.1",
-    "@sitecore-jss/sitecore-jss-cli": "~21.2.3",
-    "@sitecore-jss/sitecore-jss-dev-tools": "~21.2.3",
+    "@sitecore-jss/sitecore-jss-cli": "~21.3.0-canary",
+    "@sitecore-jss/sitecore-jss-dev-tools": "~21.3.0-canary",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
@@ -93,7 +90,7 @@
     "next:build": "next build",
     "next:dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "next:start": "next start",
-    "scaffold": "ts-node --project tsconfig.scripts.json scripts/scaffold-component.ts",
+    "scaffold": "ts-node --project tsconfig.scripts.json scripts/scaffold-component/index.ts",
     "start:connected": "npm-run-all --serial bootstrap --parallel next:dev start:watch-components",
     "start:production": "npm-run-all --serial bootstrap next:build next:start",
     "start:watch-components": "ts-node --project tsconfig.scripts.json scripts/generate-component-builder/index.ts --watch"

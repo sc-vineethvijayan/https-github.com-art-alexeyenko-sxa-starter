@@ -2044,142 +2044,142 @@
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideTracking",
+            "name": "NextjsStyleguideTracking",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideSitecoreContext",
+            "name": "NextjsStyleguideSitecoreContext",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideSection",
+            "name": "NextjsStyleguideSection",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideRouteFields",
+            "name": "NextjsStyleguideRouteFields",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideMultilingual",
+            "name": "NextjsStyleguideMultilingual",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideLayoutTabsTab",
+            "name": "NextjsStyleguideLayoutTabsTab",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideLayoutTabs",
+            "name": "NextjsStyleguideLayoutTabs",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideLayoutReuse",
+            "name": "NextjsStyleguideLayoutReuse",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideItemLinkItemTemplate",
+            "name": "NextjsStyleguideItemLinkItemTemplate",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageText",
+            "name": "NextjsStyleguideFieldUsageText",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageRichText",
+            "name": "NextjsStyleguideFieldUsageRichText",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageNumber",
+            "name": "NextjsStyleguideFieldUsageNumber",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageLink",
+            "name": "NextjsStyleguideFieldUsageLink",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageItemLink",
+            "name": "NextjsStyleguideFieldUsageItemLink",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageImage",
+            "name": "NextjsStyleguideFieldUsageImage",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageFile",
+            "name": "NextjsStyleguideFieldUsageFile",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageDate",
+            "name": "NextjsStyleguideFieldUsageDate",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageCustom",
+            "name": "NextjsStyleguideFieldUsageCustom",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageContentList",
+            "name": "NextjsStyleguideFieldUsageContentList",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageCheckbox",
+            "name": "NextjsStyleguideFieldUsageCheckbox",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "C__StyleguideExplanatoryComponent",
+            "name": "C__NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideContentListItemTemplate",
+            "name": "NextjsStyleguideContentListItemTemplate",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideComponentParams",
+            "name": "NextjsStyleguideComponentParams",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "GraphQLIntegratedDemo",
+            "name": "NextjsGraphQLIntegratedDemo",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "GraphQLConnectedDemo",
+            "name": "NextjsGraphQLConnectedDemo",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "ExampleCustomRouteType",
+            "name": "NextjsExampleCustomRouteType",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "ContentBlock",
+            "name": "NextjsContentBlock",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "C__AppRoute",
+            "name": "C__NextjsAppRoute",
             "ofType": null
           },
           {
@@ -4121,7 +4121,7 @@
       {
         "kind": "OBJECT",
         "name": "StyleguideComponentParamsRenderingParameters",
-        "description": "/sitecore/templates/Project//Styleguide-ComponentParams Rendering Parameters template (ID: {57F1C4D3-6494-5339-A7DD-C67586B5CE4F}).",
+        "description": "/sitecore/templates/Project/Nextjs/Styleguide-ComponentParams Rendering Parameters template (ID: {57F1C4D3-6494-5339-A7DD-C67586B5CE4F}).",
         "fields": [
           {
             "name": "ancestors",
@@ -5852,8 +5852,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideTracking",
-        "description": "/sitecore/templates/Project//-Styleguide-Tracking template (ID: {06A0F451-50F5-57BC-BC7C-02CED260FF55}).",
+        "name": "NextjsStyleguideTracking",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Tracking template (ID: {06A0F451-50F5-57BC-BC7C-02CED260FF55}).",
         "fields": [
           {
             "name": "ancestors",
@@ -6288,7 +6288,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -6302,8 +6302,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideSitecoreContext",
-        "description": "/sitecore/templates/Project//-Styleguide-SitecoreContext template (ID: {9896119B-75EF-5E12-A7F2-A67DBA5B59B1}).",
+        "name": "NextjsStyleguideSitecoreContext",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-SitecoreContext template (ID: {9896119B-75EF-5E12-A7F2-A67DBA5B59B1}).",
         "fields": [
           {
             "name": "ancestors",
@@ -6738,7 +6738,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -6752,8 +6752,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideSection",
-        "description": "/sitecore/templates/Project//-Styleguide-Section template (ID: {8A6F9728-6099-5F93-B782-078C0BF4D968}).",
+        "name": "NextjsStyleguideSection",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Section template (ID: {8A6F9728-6099-5F93-B782-078C0BF4D968}).",
         "fields": [
           {
             "name": "ancestors",
@@ -7185,8 +7185,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideRouteFields",
-        "description": "/sitecore/templates/Project//-Styleguide-RouteFields template (ID: {DDEDAFB7-128D-5E06-8196-FAA170B3D03C}).",
+        "name": "NextjsStyleguideRouteFields",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-RouteFields template (ID: {DDEDAFB7-128D-5E06-8196-FAA170B3D03C}).",
         "fields": [
           {
             "name": "ancestors",
@@ -7621,7 +7621,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -7635,8 +7635,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideMultilingual",
-        "description": "/sitecore/templates/Project//-Styleguide-Multilingual template (ID: {CFBD0888-3BC0-575A-8EBE-7D9CEDD341C0}).",
+        "name": "NextjsStyleguideMultilingual",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Multilingual template (ID: {CFBD0888-3BC0-575A-8EBE-7D9CEDD341C0}).",
         "fields": [
           {
             "name": "ancestors",
@@ -8083,7 +8083,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -8097,8 +8097,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideLayoutTabsTab",
-        "description": "/sitecore/templates/Project//-Styleguide-Layout-Tabs-Tab template (ID: {2DF24150-746E-538F-9B5A-8525A4CCFDEC}).",
+        "name": "NextjsStyleguideLayoutTabsTab",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Layout-Tabs-Tab template (ID: {2DF24150-746E-538F-9B5A-8525A4CCFDEC}).",
         "fields": [
           {
             "name": "ancestors",
@@ -8542,8 +8542,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideLayoutTabs",
-        "description": "/sitecore/templates/Project//-Styleguide-Layout-Tabs template (ID: {5EC1815B-EA00-5E25-AFE0-DD92D2302EC2}).",
+        "name": "NextjsStyleguideLayoutTabs",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Layout-Tabs template (ID: {5EC1815B-EA00-5E25-AFE0-DD92D2302EC2}).",
         "fields": [
           {
             "name": "ancestors",
@@ -8978,7 +8978,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -8992,8 +8992,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideLayoutReuse",
-        "description": "/sitecore/templates/Project//-Styleguide-Layout-Reuse template (ID: {251DE221-673B-5F04-B617-D8D1A020DFDD}).",
+        "name": "NextjsStyleguideLayoutReuse",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Layout-Reuse template (ID: {251DE221-673B-5F04-B617-D8D1A020DFDD}).",
         "fields": [
           {
             "name": "ancestors",
@@ -9428,7 +9428,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -9442,8 +9442,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideItemLinkItemTemplate",
-        "description": "/sitecore/templates/Project//-Styleguide-ItemLink-Item-Template template (ID: {ED79C212-F8D4-5762-B160-769427A8570B}).",
+        "name": "NextjsStyleguideItemLinkItemTemplate",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-ItemLink-Item-Template template (ID: {ED79C212-F8D4-5762-B160-769427A8570B}).",
         "fields": [
           {
             "name": "ancestors",
@@ -9875,8 +9875,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageText",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Text template (ID: {004A5769-7C65-5E5A-8375-4311BC50481F}).",
+        "name": "NextjsStyleguideFieldUsageText",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Text template (ID: {004A5769-7C65-5E5A-8375-4311BC50481F}).",
         "fields": [
           {
             "name": "ancestors",
@@ -10335,7 +10335,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -10349,8 +10349,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageRichText",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-RichText template (ID: {E1AD788D-5496-573C-AC80-D7692143816C}).",
+        "name": "NextjsStyleguideFieldUsageRichText",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-RichText template (ID: {E1AD788D-5496-573C-AC80-D7692143816C}).",
         "fields": [
           {
             "name": "ancestors",
@@ -10809,7 +10809,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -10823,8 +10823,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageNumber",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Number template (ID: {B0681769-342B-505E-8392-9C0A3BBDC0B0}).",
+        "name": "NextjsStyleguideFieldUsageNumber",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Number template (ID: {B0681769-342B-505E-8392-9C0A3BBDC0B0}).",
         "fields": [
           {
             "name": "ancestors",
@@ -11271,7 +11271,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -11285,8 +11285,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageLink",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Link template (ID: {8CFE0D37-E726-59CD-821C-6839BF2CE36D}).",
+        "name": "NextjsStyleguideFieldUsageLink",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Link template (ID: {8CFE0D37-E726-59CD-821C-6839BF2CE36D}).",
         "fields": [
           {
             "name": "ancestors",
@@ -11769,7 +11769,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -11783,8 +11783,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageItemLink",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-ItemLink template (ID: {8EF4CB39-9119-5153-A002-161B89E56347}).",
+        "name": "NextjsStyleguideFieldUsageItemLink",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-ItemLink template (ID: {8EF4CB39-9119-5153-A002-161B89E56347}).",
         "fields": [
           {
             "name": "ancestors",
@@ -12243,7 +12243,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -12257,8 +12257,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageImage",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Image template (ID: {5FF73BC4-BB50-5B16-BC22-B6244CFB5A73}).",
+        "name": "NextjsStyleguideFieldUsageImage",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Image template (ID: {5FF73BC4-BB50-5B16-BC22-B6244CFB5A73}).",
         "fields": [
           {
             "name": "ancestors",
@@ -12717,7 +12717,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -12731,8 +12731,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageFile",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-File template (ID: {1564AFF5-19A9-56ED-9D73-C55F40D574FD}).",
+        "name": "NextjsStyleguideFieldUsageFile",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-File template (ID: {1564AFF5-19A9-56ED-9D73-C55F40D574FD}).",
         "fields": [
           {
             "name": "ancestors",
@@ -13179,7 +13179,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -13193,8 +13193,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageDate",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Date template (ID: {1847C9C2-9B05-5860-8207-B240D7A5B820}).",
+        "name": "NextjsStyleguideFieldUsageDate",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Date template (ID: {1847C9C2-9B05-5860-8207-B240D7A5B820}).",
         "fields": [
           {
             "name": "ancestors",
@@ -13653,7 +13653,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -13667,8 +13667,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageCustom",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Custom template (ID: {EEA463CD-9696-5BDA-83E2-043A32DEA7D4}).",
+        "name": "NextjsStyleguideFieldUsageCustom",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Custom template (ID: {EEA463CD-9696-5BDA-83E2-043A32DEA7D4}).",
         "fields": [
           {
             "name": "ancestors",
@@ -14115,7 +14115,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -14129,8 +14129,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageContentList",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-ContentList template (ID: {CB2CFFE6-5481-541C-8F0C-25F248FDEB22}).",
+        "name": "NextjsStyleguideFieldUsageContentList",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-ContentList template (ID: {CB2CFFE6-5481-541C-8F0C-25F248FDEB22}).",
         "fields": [
           {
             "name": "ancestors",
@@ -14589,7 +14589,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -14603,8 +14603,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideFieldUsageCheckbox",
-        "description": "/sitecore/templates/Project//-Styleguide-FieldUsage-Checkbox template (ID: {41A681D2-0725-5987-ADD5-6D51CAC9F548}).",
+        "name": "NextjsStyleguideFieldUsageCheckbox",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-FieldUsage-Checkbox template (ID: {41A681D2-0725-5987-ADD5-6D51CAC9F548}).",
         "fields": [
           {
             "name": "ancestors",
@@ -15063,7 +15063,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -15077,8 +15077,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "C__StyleguideExplanatoryComponent",
-        "description": "/sitecore/templates/Project//-Styleguide-Explanatory-Component template (ID: {02DBD562-2D01-5472-A7B0-54A6508AC665}). NOTE: This is a concrete type. Favor using interfaces instead of this type (e.g. StyleguideExplanatoryComponent) for reliable querying.",
+        "name": "C__NextjsStyleguideExplanatoryComponent",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Explanatory-Component template (ID: {02DBD562-2D01-5472-A7B0-54A6508AC665}). NOTE: This is a concrete type. Favor using interfaces instead of this type (e.g. NextjsStyleguideExplanatoryComponent) for reliable querying.",
         "fields": [
           {
             "name": "ancestors",
@@ -15513,7 +15513,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -15527,8 +15527,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideContentListItemTemplate",
-        "description": "/sitecore/templates/Project//-Styleguide-ContentList-Item-Template template (ID: {783417BF-451E-5AB1-AD45-EF26DCBAEC53}).",
+        "name": "NextjsStyleguideContentListItemTemplate",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-ContentList-Item-Template template (ID: {783417BF-451E-5AB1-AD45-EF26DCBAEC53}).",
         "fields": [
           {
             "name": "ancestors",
@@ -15960,8 +15960,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "StyleguideComponentParams",
-        "description": "/sitecore/templates/Project//-Styleguide-ComponentParams template (ID: {A724031B-12A6-5E05-A249-B2F0F017F5EF}).",
+        "name": "NextjsStyleguideComponentParams",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-ComponentParams template (ID: {A724031B-12A6-5E05-A249-B2F0F017F5EF}).",
         "fields": [
           {
             "name": "ancestors",
@@ -16396,7 +16396,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "StyleguideExplanatoryComponent",
+            "name": "NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
@@ -16410,8 +16410,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "GraphQLIntegratedDemo",
-        "description": "/sitecore/templates/Project//-GraphQL-IntegratedDemo template (ID: {C23F5BA8-08EA-57CC-BC17-39ECF5B512E5}).",
+        "name": "NextjsGraphQLIntegratedDemo",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-GraphQL-IntegratedDemo template (ID: {C23F5BA8-08EA-57CC-BC17-39ECF5B512E5}).",
         "fields": [
           {
             "name": "ancestors",
@@ -16855,8 +16855,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "GraphQLConnectedDemo",
-        "description": "/sitecore/templates/Project//-GraphQL-ConnectedDemo template (ID: {2C3D6270-6FBC-519C-8404-E92CDAD92FF5}).",
+        "name": "NextjsGraphQLConnectedDemo",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-GraphQL-ConnectedDemo template (ID: {2C3D6270-6FBC-519C-8404-E92CDAD92FF5}).",
         "fields": [
           {
             "name": "ancestors",
@@ -17300,8 +17300,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "ExampleCustomRouteType",
-        "description": "/sitecore/templates/Project//-ExampleCustomRouteType template (ID: {F15CE080-38CE-5A69-BF36-6F5A50D84DBD}).",
+        "name": "NextjsExampleCustomRouteType",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-ExampleCustomRouteType template (ID: {F15CE080-38CE-5A69-BF36-6F5A50D84DBD}).",
         "fields": [
           {
             "name": "ancestors",
@@ -17760,7 +17760,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "AppRoute",
+            "name": "NextjsAppRoute",
             "ofType": null
           },
           {
@@ -17774,8 +17774,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "ContentBlock",
-        "description": "/sitecore/templates/Project//-ContentBlock template (ID: {1AEE8B0E-8DB8-58A3-805F-0092B5582459}).",
+        "name": "NextjsContentBlock",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-ContentBlock template (ID: {1AEE8B0E-8DB8-58A3-805F-0092B5582459}).",
         "fields": [
           {
             "name": "ancestors",
@@ -18219,8 +18219,8 @@
       },
       {
         "kind": "OBJECT",
-        "name": "C__AppRoute",
-        "description": "/sitecore/templates/Project//-App Route template (ID: {787584C0-A057-5876-9836-F8B3708F0CAF}). NOTE: This is a concrete type. Favor using interfaces instead of this type (e.g. AppRoute) for reliable querying.",
+        "name": "C__NextjsAppRoute",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-App Route template (ID: {787584C0-A057-5876-9836-F8B3708F0CAF}). NOTE: This is a concrete type. Favor using interfaces instead of this type (e.g. NextjsAppRoute) for reliable querying.",
         "fields": [
           {
             "name": "ancestors",
@@ -18643,7 +18643,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "AppRoute",
+            "name": "NextjsAppRoute",
             "ofType": null
           },
           {
@@ -21365,8 +21365,8 @@
       },
       {
         "kind": "INTERFACE",
-        "name": "StyleguideExplanatoryComponent",
-        "description": "/sitecore/templates/Project//-Styleguide-Explanatory-Component template (ID: {02DBD562-2D01-5472-A7B0-54A6508AC665}).",
+        "name": "NextjsStyleguideExplanatoryComponent",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-Styleguide-Explanatory-Component template (ID: {02DBD562-2D01-5472-A7B0-54A6508AC665}).",
         "fields": [
           {
             "name": "description",
@@ -21399,105 +21399,105 @@
         "possibleTypes": [
           {
             "kind": "OBJECT",
-            "name": "StyleguideTracking",
+            "name": "NextjsStyleguideTracking",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideSitecoreContext",
+            "name": "NextjsStyleguideSitecoreContext",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideRouteFields",
+            "name": "NextjsStyleguideRouteFields",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideMultilingual",
+            "name": "NextjsStyleguideMultilingual",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideLayoutTabs",
+            "name": "NextjsStyleguideLayoutTabs",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideLayoutReuse",
+            "name": "NextjsStyleguideLayoutReuse",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageText",
+            "name": "NextjsStyleguideFieldUsageText",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageRichText",
+            "name": "NextjsStyleguideFieldUsageRichText",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageNumber",
+            "name": "NextjsStyleguideFieldUsageNumber",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageLink",
+            "name": "NextjsStyleguideFieldUsageLink",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageItemLink",
+            "name": "NextjsStyleguideFieldUsageItemLink",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageImage",
+            "name": "NextjsStyleguideFieldUsageImage",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageFile",
+            "name": "NextjsStyleguideFieldUsageFile",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageDate",
+            "name": "NextjsStyleguideFieldUsageDate",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageCustom",
+            "name": "NextjsStyleguideFieldUsageCustom",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageContentList",
+            "name": "NextjsStyleguideFieldUsageContentList",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideFieldUsageCheckbox",
+            "name": "NextjsStyleguideFieldUsageCheckbox",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "C__StyleguideExplanatoryComponent",
+            "name": "C__NextjsStyleguideExplanatoryComponent",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "StyleguideComponentParams",
+            "name": "NextjsStyleguideComponentParams",
             "ofType": null
           }
         ]
       },
       {
         "kind": "INTERFACE",
-        "name": "AppRoute",
-        "description": "/sitecore/templates/Project//-App Route template (ID: {787584C0-A057-5876-9836-F8B3708F0CAF}). Also implements Route.",
+        "name": "NextjsAppRoute",
+        "description": "/sitecore/templates/Project/Nextjs/Nextjs-App Route template (ID: {787584C0-A057-5876-9836-F8B3708F0CAF}). Also implements Route.",
         "fields": [
           {
             "name": "pageTitle",
@@ -21518,12 +21518,12 @@
         "possibleTypes": [
           {
             "kind": "OBJECT",
-            "name": "ExampleCustomRouteType",
+            "name": "NextjsExampleCustomRouteType",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "C__AppRoute",
+            "name": "C__NextjsAppRoute",
             "ofType": null
           }
         ]
