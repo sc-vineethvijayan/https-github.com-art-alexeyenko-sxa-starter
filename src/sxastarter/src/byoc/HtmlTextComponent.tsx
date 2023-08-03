@@ -2,11 +2,11 @@ import React from 'react';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import parse from 'html-react-parser';
 
-interface RichTextComponentProps {
+interface HtmlTextComponentProps {
   html: string;
 }
 
-export const RichTextComponent = (props: RichTextComponentProps): JSX.Element => {
+export const HtmlTextComponent = (props: HtmlTextComponentProps): JSX.Element => {
   return (
     <div className="container">
       <h2>Html text Component</h2>
@@ -15,8 +15,8 @@ export const RichTextComponent = (props: RichTextComponentProps): JSX.Element =>
   );
 };
 
-FEAAS.External.registerComponent(RichTextComponent, {
-  name: 'MultiLineText',
+FEAAS.External.registerComponent(HtmlTextComponent, {
+  name: 'HtmlTextComponent',
   properties: {
     html: {
       type: 'string',
