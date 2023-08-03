@@ -14,7 +14,6 @@ export const DefaultByocComponent = (props: DefaultByocComponentProps): JSX.Elem
   return (
     <div className="container">
       <h2>{props.title || 'BYOC Demo'}</h2>
-      <p>DefaultByocComponent Component</p>
       <div className="row">
         {columns.map((text, index) => (
           <div key={index} className={`col-sm-${props.columnsCount}`}>
