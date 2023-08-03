@@ -28,7 +28,7 @@ class PackagesPlugin implements ComponentBuilderPlugin {
      * const componentsPath = 'src/extra';
      * config.packages = getComponentList(componentsPath) as PackageDefinition[];
      */
-    const componentsPath = 'src/extra';
+    const componentsPath = 'src/byoc';
     config.packages = getComponentList(componentsPath) as PackageDefinition[];
 
     return config;
