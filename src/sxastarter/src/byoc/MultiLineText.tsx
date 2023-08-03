@@ -1,23 +1,24 @@
 import React from 'react';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
+import parse from 'html-react-parser';
 
 interface RichTextComponentProps {
-  multiline: string;
+  html: string;
 }
 
 export const RichTextComponent = (props: RichTextComponentProps): JSX.Element => {
   return (
     <div className="container">
-      <h2>Multiline text Component</h2>
-      <p>${props.multiline || 'Multiline Component Default'}</p>
+      <h2>Html text Component</h2>
+      <p>{parse(props.html) || 'Html Component Default'}</p>
     </div>
   );
 };
 
 FEAAS.External.registerComponent(RichTextComponent, {
-  name: 'RichTextComponent',
+  name: 'MultiLineText',
   properties: {
-    multiline: {
+    html: {
       type: 'string',
     },
   },

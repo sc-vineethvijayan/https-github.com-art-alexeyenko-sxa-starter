@@ -9,6 +9,7 @@ export const Default = (props: BYOCProps): JSX.Element => {
     components: FEAAS.External.registered,
     ...props,
   };
+  console.log(props);
   return (
     <div className={styles ? styles : undefined} id={id ? id : undefined}>
       <div className="component-content">

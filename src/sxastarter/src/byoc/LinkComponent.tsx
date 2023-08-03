@@ -10,7 +10,7 @@ export const LinkComponent = (props: LinkComponentProps): JSX.Element => {
     <div className="container">
       <h2>This is Link Component</h2>
       <div>
-        <a href={props.href}>Component Link</a>
+        <a href={props.href}>Check out this link!</a>
       </div>
     </div>
   );

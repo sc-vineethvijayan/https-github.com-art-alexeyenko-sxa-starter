@@ -8,7 +8,7 @@ interface TextComponentProps {
 export const TextComponent = (props: TextComponentProps): JSX.Element => {
   return (
     <div className="container">
-      <h2>${props.title || 'Text Component Default Text'}</h2>
+      <h2>{props.title || 'Text Component Default Text'}</h2>
     </div>
   );
 };
