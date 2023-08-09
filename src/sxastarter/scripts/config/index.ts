@@ -28,6 +28,8 @@ export interface ConfigPlugin {
 
 export class JssConfigFactory {
   public async create(defaultConfig: JssConfig = {}): Promise<JssConfig> {
+    console.log('THIS IS ENV URL');
+    console.log(process.env.URL);
     return (Object.values(plugins) as ConfigPlugin[])
       .sort((p1, p2) => p1.order - p2.order)
       .reduce(
