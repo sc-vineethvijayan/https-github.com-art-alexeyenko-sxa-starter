@@ -18,7 +18,8 @@ export default async function middleware(
   ev: NextFetchEvent
 ): Promise<NextResponse> {
   const response = NextResponse.next();
-
+  console.log('THIS IS ENV URL');
+  console.log(process.env.URL);
   return (Object.values(plugins) as MiddlewarePlugin[])
     .sort((p1, p2) => p1.order - p2.order)
     .reduce((p, plugin) => p.then((res) => plugin.exec(req, res, ev)), Promise.resolve(response));

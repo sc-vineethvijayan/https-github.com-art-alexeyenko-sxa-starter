@@ -4,7 +4,8 @@
   included into the build - specifically, plugins, the global config module,
   and the component name to component mapping.
 */
-
+console.log('THIS IS ENV URL');
+console.log(process.env.URL);
 /*
    PLUGINS GENERATION
 */

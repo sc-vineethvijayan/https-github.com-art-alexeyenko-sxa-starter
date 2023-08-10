@@ -4,7 +4,7 @@ import {
   GraphQLSitemapXmlService,
   AxiosResponse,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs/utils';
+import { getPublicUrl } from 'lib/utils';
 import { siteResolver } from 'lib/site-resolver';
 import config from 'temp/config';
 
