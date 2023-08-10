@@ -1,7 +1,7 @@
 const jssConfig = require('./src/temp/config');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
-export const getPublicUrl = () => {
+const getPublicUrl = () => {
   if (process.env.URL) return process.env.URL; // Netlify
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
