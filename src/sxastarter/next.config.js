@@ -2,9 +2,17 @@ const jssConfig = require('./src/temp/config');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
 const getPublicUrl = () => {
-  if (process.env.URL) {
-    return process.env.NODE_ENV !== 'production' ? process.env.URL : ''; // Netlify
+  if (process.env.NETLIFY) {
+    switch (process.env.CONTEXT) {
+      case 'deploy-preview':
+        return process.env.DEPLOY_URL;
+      case 'branch-deploy':
+        return process.env.DEPLOY_PRIME_URL;
+      default:
+        return process.env.URL;      
+    }
   }
+
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
   let url = process.env.PUBLIC_URL;
