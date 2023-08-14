@@ -1,5 +1,5 @@
 export const getPublicUrl = (): string => {
-  if (process.env.URL) return process.env.URL; // Netlify
+  if (process.env.DEPLOY_PRIME_URL) return process.env.DEPLOY_PRIME_URL; // Netlify
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
   let url = process.env.PUBLIC_URL;
