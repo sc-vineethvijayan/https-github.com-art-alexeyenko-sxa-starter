@@ -48,7 +48,7 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
           <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
         </header>
         <main>
-          <img src={`${getPublicUrl()}/assets/2a0.jpg`} />
+          <img src={`/assets/2a0.jpg`} />
           <div id="content">{route && <Placeholder name="headless-main" rendering={route} />}</div>
         </main>
         <footer>
