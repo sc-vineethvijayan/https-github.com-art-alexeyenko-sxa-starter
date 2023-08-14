@@ -6,6 +6,9 @@
 */
 console.log('THIS IS ENV URL');
 console.log(process.env.URL);
+console.log(process.env.DEPLOY_PRIME_URL);
+console.log(process.env.DEPLOY_URL);
+console.log(process.env.DEPLOY_ID);
 /*
    PLUGINS GENERATION
 */

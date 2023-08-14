@@ -26,7 +26,11 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
   const fields = route?.fields as RouteFields;
   const isPageEditing = layoutData.sitecore.context.pageEditing;
   const mainClassPageEditing = isPageEditing ? 'editing-mode' : 'prod-mode';
-
+  console.log('THIS IS ENV URL');
+  console.log(process.env.URL);
+  console.log(process.env.DEPLOY_PRIME_URL);
+  console.log(process.env.DEPLOY_URL);
+  console.log(process.env.DEPLOY_ID);
   return (
     <>
       <Scripts />
