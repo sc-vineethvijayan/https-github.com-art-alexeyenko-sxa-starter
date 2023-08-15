@@ -2,9 +2,8 @@ const jssConfig = require('./src/temp/config');
 const plugins = require('./src/temp/next-config-plugins') || {};
 
 const getPublicUrl = () => {
-  if (process.env.NETLIFY) {
-    const url = process.env.DEPLOY_PRIME_URL || process.env.URL;
-    if (url) return url;
+  if (process.env.NETLIFY && process.env.DEPLOY_URL) {
+    return process.env.DEPLOY_URL;
   }
 
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
