@@ -7,7 +7,7 @@ export const getPublicUrl = (): string => {
         return process.env.DEPLOY_PRIME_URL || '';
       default:
         return process.env.URL || '';
-      }
+    }
   }
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
