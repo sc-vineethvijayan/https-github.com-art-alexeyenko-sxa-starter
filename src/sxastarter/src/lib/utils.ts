@@ -1,6 +1,13 @@
 export const getPublicUrl = (): string => {
-  if (process.env.URL) {
-    return process.env.NODE_ENV !== 'production' ? process.env.URL : ''; // Netlify
+  if (process.env.NETLIFY) {
+    switch (process.env.CONTEXT) {
+      case 'deploy-preview':
+        return process.env.DEPLOY_URL || '';
+      case 'branch-deploy':
+        return process.env.DEPLOY_PRIME_URL || '';
+      default:
+        return process.env.URL || '';
+      }
   }
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
