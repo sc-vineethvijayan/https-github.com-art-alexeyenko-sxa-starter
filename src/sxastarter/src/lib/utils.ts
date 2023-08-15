@@ -1,4 +1,6 @@
 export const getPublicUrl = (): string => {
+  console.log('THIS IS NETLIFY CONTEXT');
+  console.log(process.env.NETLIFY);
   if (process.env.NETLIFY) {
     switch (process.env.CONTEXT) {
       case 'deploy-preview':
