@@ -1,15 +1,7 @@
 export const getPublicUrl = (): string => {
-  console.log('THIS IS NETLIFY CONTEXT');
-  console.log(process.env.NETLIFY);
   if (process.env.NETLIFY) {
-    switch (process.env.CONTEXT) {
-      case 'deploy-preview':
-        return process.env.DEPLOY_URL || '';
-      case 'branch-deploy':
-        return process.env.DEPLOY_PRIME_URL || '';
-      default:
-        return process.env.URL || '';
-    }
+    const url = process.env.DEPLOY_PRIME_URL || process.env.URL;
+    if (url) return url;
   }
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
