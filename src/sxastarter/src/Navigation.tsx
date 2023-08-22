@@ -1,4 +1,4 @@
-import { getPublicUrl } from '@sitecore-jss/sitecore-jss-nextjs/utils';
+import { getPublicUrl } from 'lib/utils';
 
 // Prefix public assets with a public URL to enable compatibility with Sitecore editors.
 // If you're not supporting Sitecore editors, you can remove this.
