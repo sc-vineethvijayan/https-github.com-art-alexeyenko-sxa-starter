@@ -20,7 +20,8 @@ class SitePlugin implements Plugin {
 
     // Get site name (from path)
     const siteData = getSiteRewriteData(path, config.jssAppName);
-
+    console.log('SITES');
+    console.log(siteResolver.sites);
     // Resolve site by name
     props.site = siteResolver.getByName(siteData.siteName);
 
