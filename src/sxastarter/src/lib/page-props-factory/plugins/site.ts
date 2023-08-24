@@ -41,7 +41,7 @@ function getSiteRewriteData(pathname: string, defaultSiteName: string): SiteRewr
   };
 
   const path = pathname.endsWith('/') ? pathname : pathname + '/';
-  const result = path.match(`${SITE_PREFIX}(.*?)\..+?\\/`);
+  const result = path.match(`${SITE_PREFIX}(.*?)(\..+)?\\/`);
 
   if (result && result[1] !== '') {
     data.siteName = result[1];
