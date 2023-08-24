@@ -23,6 +23,7 @@ class SitePlugin implements Plugin {
     console.log('SITES');
     console.log(siteResolver.sites);
     console.log(path);
+    
     // Resolve site by name
     props.site = siteResolver.getByName(siteData.siteName);
 
