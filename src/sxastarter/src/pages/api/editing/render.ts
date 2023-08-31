@@ -3,7 +3,7 @@ import { EditingRenderMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editi
 /**
  * This Next.js API route is used to handle POST requests from Sitecore editors.
  * This route should match the `serverSideRenderingEngineEndpointUrl` in your Sitecore configuration,
- * which is set to "http://localhost:3000/api/editing/render" by default (see \sitecore\config\sxastarter.config).
+ * which is set to "http://localhost:3000/api/editing/render" by default (see \sitecore\config\nextjs.config).
  *
  * The `EditingRenderMiddleware` will
  *  1. Extract editing data from the Sitecore editor POST request
@@ -12,6 +12,12 @@ import { EditingRenderMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editi
  *  4. Invoke the actual page render request, passing along the Preview Mode cookies.
  *     This allows retrieval of the editing data in preview context (via an `EditingDataService`) - see `SitecorePagePropsFactory`
  *  5. Return the rendered page HTML to the Sitecore editor
+ */
+
+/**
+ * For Vercel deployments:
+ * if you experience crashes in editing, you may need to use VercelEditingDataCache or a custom Redis data cache implementation with EditingRenderMiddleware
+ * Please refer to documentation for a detailed guide.
  */
 
 // Bump body size limit (1mb by default) and disable response limit for Sitecore editor payloads

@@ -1,11 +1,5 @@
-import CdpPageView from 'components/CdpPageView';
-
-const Scripts = (): JSX.Element => {
-  return (
-    <>
-      <CdpPageView />
-    </>
-  );
+const Scripts = (): JSX.Element | null => {
+  return null;
 };
 
 export default Scripts;
