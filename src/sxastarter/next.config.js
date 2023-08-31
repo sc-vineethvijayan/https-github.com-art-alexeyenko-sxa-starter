@@ -4,7 +4,7 @@ const { getPublicUrl } = require('@sitecore-jss/sitecore-jss-nextjs/utils');
 
 const publicUrl = getPublicUrl();
 console.log('PUBLIC URL!!!');
-console.log(publicUrl);
+console.log(`here ${publicUrl}`);
 
 /**
  * @type {import('next').NextConfig}
