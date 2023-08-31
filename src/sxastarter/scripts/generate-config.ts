@@ -19,7 +19,6 @@ const defaultConfig: JssConfig = {
   graphQLEndpoint: process.env[`${constantCase('graphQLEndpoint')}`],
 };
 
-console.log('ENVIRONMENT VARIABLES:', process.env);
 generateConfig(defaultConfig);
 
 /**
