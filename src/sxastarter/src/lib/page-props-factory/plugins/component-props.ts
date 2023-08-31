@@ -1,7 +1,7 @@
 import { ComponentPropsService } from '@sitecore-jss/sitecore-jss-nextjs';
 import { SitecorePageProps } from 'lib/page-props';
 import { GetServerSidePropsContext, GetStaticPropsContext } from 'next';
-import { moduleFactory } from 'temp/componentBuilder';
+import { componentModule } from 'temp/componentFactory';
 import { Plugin, isServerSidePropsContext } from '..';
 
 class ComponentPropsPlugin implements Plugin {
@@ -21,13 +21,13 @@ class ComponentPropsPlugin implements Plugin {
       props.componentProps = await this.componentPropsService.fetchServerSideComponentProps({
         layoutData: props.layoutData,
         context,
-        moduleFactory,
+        componentModule,
       });
     } else {
       props.componentProps = await this.componentPropsService.fetchStaticComponentProps({
         layoutData: props.layoutData,
         context,
-        moduleFactory,
+        componentModule,
       });
     }
 

@@ -109,10 +109,6 @@ export const Default = (props: NavigationProps): JSX.Element => {
 
 const NavigationList = (props: NavigationProps) => {
   const { sitecoreContext } = useSitecoreContext();
-  const [active, setActive] = useState(false);
-  const classNameList = `${props.fields.Styles.concat('rel-level' + props.relativeLevel).join(
-    ' '
-  )}`;
 
   let children: JSX.Element[] = [];
   if (props.fields.Children && props.fields.Children.length) {
@@ -127,11 +123,12 @@ const NavigationList = (props: NavigationProps) => {
   }
 
   return (
-    <li className={`${classNameList} ${active ? 'active' : ''}`} key={props.fields.Id} tabIndex={0}>
-      <div
-        className={`navigation-title ${children.length ? 'child' : ''}`}
-        onClick={() => setActive(() => !active)}
-      >
+    <li
+      className={props.fields.Styles.concat('rel-level' + props.relativeLevel).join(' ')}
+      key={props.fields.Id}
+      tabIndex={0}
+    >
+      <div className="navigation-title">
         <Link
           field={getLinkField(props)}
           editable={sitecoreContext.pageEditing}

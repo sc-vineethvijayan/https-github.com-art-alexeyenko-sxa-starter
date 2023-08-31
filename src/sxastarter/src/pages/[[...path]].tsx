@@ -6,21 +6,17 @@ import {
   RenderingType,
   SitecoreContext,
   ComponentPropsContext,
+  handleEditorFastRefresh,
   EditingComponentPlaceholder,
   StaticPath,
 } from '@sitecore-jss/sitecore-jss-nextjs';
-import { handleEditorFastRefresh } from '@sitecore-jss/sitecore-jss-nextjs/utils';
 import { SitecorePageProps } from 'lib/page-props';
 import { sitecorePagePropsFactory } from 'lib/page-props-factory';
-import { componentBuilder } from 'temp/componentBuilder';
+// different componentFactory method will be used based on whether page is being edited
+import { componentFactory, editingComponentFactory } from 'temp/componentFactory';
 import { sitemapFetcher } from 'lib/sitemap-fetcher';
 
-const SitecorePage = ({
-  notFound,
-  componentProps,
-  layoutData,
-  headLinks,
-}: SitecorePageProps): JSX.Element => {
+const SitecorePage = ({ notFound, componentProps, layoutData }: SitecorePageProps): JSX.Element => {
   useEffect(() => {
     // Since Sitecore editors do not support Fast Refresh, need to refresh editor chromes after Fast Refresh finished
     handleEditorFastRefresh();
@@ -38,7 +34,7 @@ const SitecorePage = ({
   return (
     <ComponentPropsContext value={componentProps}>
       <SitecoreContext
-        componentFactory={componentBuilder.getComponentFactory({ isEditing })}
+        componentFactory={isEditing ? editingComponentFactory : componentFactory}
         layoutData={layoutData}
       >
         {/*
@@ -48,7 +44,7 @@ const SitecorePage = ({
         {isComponentRendering ? (
           <EditingComponentPlaceholder rendering={layoutData.sitecore.route} />
         ) : (
-          <Layout layoutData={layoutData} headLinks={headLinks} />
+          <Layout layoutData={layoutData} />
         )}
       </SitecoreContext>
     </ComponentPropsContext>
@@ -92,6 +88,13 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getStaticProps: GetStaticProps = async (context) => {
   const props = await sitecorePagePropsFactory.create(context);
+
+  // Check if we have a redirect (e.g. custom error page)
+  if (props.redirect) {
+    return {
+      redirect: props.redirect,
+    };
+  }
 
   return {
     props,
