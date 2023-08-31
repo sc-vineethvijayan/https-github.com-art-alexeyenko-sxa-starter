@@ -35,6 +35,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "@netlify/functions": "^1.6.0",
+    "@netlify/plugin-nextjs": "^4.39.4-fix-edge-runtime-on-lambda",
     "@sitecore-feaas/clientside": "^0.3.6",
     "@sitecore-jss/sitecore-jss-nextjs": "canary",
     "@sitecore/engage": "^0.4.0",
