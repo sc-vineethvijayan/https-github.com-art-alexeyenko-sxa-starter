@@ -15,5 +15,5 @@ export const config = {
    * 4. /- (Sitecore media)
    * 5. all root files inside /public (e.g. /favicon.ico)
    */
-  matcher: ['/', '/((?!api/|_next/|sitecore/api/|-/|[\\w-]+\\.\\w+).*)'],
+  matcher: ['/', '/((?!api/|_next/|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg).*)'],
 };
