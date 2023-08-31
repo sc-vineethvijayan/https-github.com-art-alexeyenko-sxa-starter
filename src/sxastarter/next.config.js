@@ -3,6 +3,8 @@ const plugins = require('./src/temp/next-config-plugins') || {};
 const { getPublicUrl } = require('@sitecore-jss/sitecore-jss-nextjs/utils');
 
 const publicUrl = getPublicUrl();
+console.log('PUBLIC URL!!!');
+console.log(publicUrl);
 
 /**
  * @type {import('next').NextConfig}
