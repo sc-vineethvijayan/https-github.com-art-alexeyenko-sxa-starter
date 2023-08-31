@@ -1,4 +1,8 @@
-import { EditingRenderMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/editing';
+import {
+  EditingRenderMiddleware,
+  editingDataService,
+} from '@sitecore-jss/sitecore-jss-nextjs/editing';
+import { netlifyEditingDataService } from 'lib/netlify-editing-data-service';
 
 /**
  * This Next.js API route is used to handle POST requests from Sitecore editors.
@@ -26,6 +30,19 @@ export const config = {
 };
 
 // Wire up the EditingRenderMiddleware handler
-const handler = new EditingRenderMiddleware().getHandler();
+const handler = new EditingRenderMiddleware({
+  // !!CHANGE!!
+  // Use Netlify editing data service (uses dedicated Netlify function)
+  editingDataService: process.env.NETLIFY_TEST ? netlifyEditingDataService : editingDataService,
+  // !!CHANGE!!
+  resolveServerUrl(req) {
+    return (
+      // URL will be defined in Netlify environments
+      // See https://docs.netlify.com/functions/environment-variables/#functions
+      process.env.URL ||
+      `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${req.headers.host}`
+    );
+  },
+}).getHandler();
 
 export default handler;

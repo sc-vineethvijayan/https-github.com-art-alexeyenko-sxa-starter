@@ -1,8 +1,6 @@
-import {
-  generatePlugins,
-  ModuleType,
-  PluginDefinition,
-} from '@sitecore-jss/sitecore-jss-dev-tools';
+import fs from 'fs';
+import path from 'path';
+import { getItems } from './utils';
 
 /*
   PLUGINS GENERATION
@@ -13,52 +11,114 @@ import {
 
   The default convention uses the plugin's filename (without the extension) as the first part of the component
   name. For example, the file `/lib/page-props-factory/plugins/exampleName.ts` would map to plugin `exampleNamePlugin`.
+  This can be customized in writePlugins().
 */
 
-const pluginDefinitions: PluginDefinition[] = [
+enum ModuleType {
+  CJS,
+  ESM,
+}
+
+interface PluginDefinition {
+  listPath: string;
+  rootPath: string;
+  moduleType: ModuleType;
+}
+
+interface PluginFile {
+  path: string;
+  name: string;
+}
+
+const pluginDefinitions = [
   {
-    distPath: 'scripts/temp/generate-component-builder-plugins.ts',
-    rootPath: 'scripts/generate-component-builder/plugins',
-    moduleType: ModuleType.ESM,
-  },
-  {
-    distPath: 'scripts/temp/config-plugins.ts',
+    listPath: 'scripts/temp/config-plugins.ts',
     rootPath: 'scripts/config/plugins',
     moduleType: ModuleType.ESM,
   },
   {
-    distPath: 'src/temp/sitemap-fetcher-plugins.ts',
+    listPath: 'src/temp/sitemap-fetcher-plugins.ts',
     rootPath: 'src/lib/sitemap-fetcher/plugins',
     moduleType: ModuleType.ESM,
   },
   {
-    distPath: 'src/temp/middleware-plugins.ts',
+    listPath: 'src/temp/middleware-plugins.ts',
     rootPath: 'src/lib/middleware/plugins',
     moduleType: ModuleType.ESM,
   },
   {
-    distPath: 'src/temp/page-props-factory-plugins.ts',
+    listPath: 'src/temp/page-props-factory-plugins.ts',
     rootPath: 'src/lib/page-props-factory/plugins',
     moduleType: ModuleType.ESM,
   },
   {
-    distPath: 'src/temp/next-config-plugins.js',
+    listPath: 'src/temp/next-config-plugins.js',
     rootPath: 'src/lib/next-config/plugins',
     moduleType: ModuleType.CJS,
-    relative: true,
   },
   {
-    distPath: 'src/temp/extract-path-plugins.ts',
+    listPath: 'src/temp/extract-path-plugins.ts',
     rootPath: 'src/lib/extract-path/plugins',
     moduleType: ModuleType.ESM,
   },
   {
-    distPath: 'src/temp/site-resolver-plugins.ts',
+    listPath: 'src/temp/site-resolver-plugins.ts',
     rootPath: 'src/lib/site-resolver/plugins',
     moduleType: ModuleType.ESM,
   },
 ];
 
-pluginDefinitions.forEach((definition) => {
-  generatePlugins(definition);
-});
+run(pluginDefinitions);
+
+function run(definitions: PluginDefinition[]) {
+  definitions.forEach((definition) => {
+    writePlugins(definition.listPath, definition.rootPath, definition.moduleType);
+  });
+}
+
+/**
+ * Generates the plugins file and saves it to the filesystem.
+ * By convention, we expect to find plugins under src/lib/{pluginName}/plugins/** (subfolders are
+ * searched recursively). The filename, with extension and non-word characters
+ * stripped, is used to identify the plugin's JavaScript module definition (for adding
+ * new plugin to the factory).
+ * Modify this function to use a different convention.
+ */
+function writePlugins(listPath: string, rootPath: string, moduleType: ModuleType) {
+  const segments = rootPath.split('/');
+  const pluginName = segments[segments.length - 2];
+  const plugins = getPluginList(rootPath, pluginName);
+  let fileContent = '';
+
+  fileContent = plugins
+    .map((plugin) => {
+      return moduleType === ModuleType.CJS
+        ? `exports.${plugin.name} = require('${plugin.path.replace('src/', '../')}');`
+        : `export { ${plugin.name} } from '${plugin.path}';`;
+    })
+    .join('\r\n')
+    .concat('\r\n');
+
+  if (!plugins.length) {
+    fileContent = moduleType === ModuleType.CJS ? 'module.exports = {};\r\n' : 'export {};\r\n';
+  }
+
+  const filePath = path.resolve(listPath);
+  console.log(`Writing ${pluginName} plugins to ${filePath}`);
+  fs.writeFileSync(filePath, fileContent, {
+    encoding: 'utf8',
+  });
+}
+
+function getPluginList(path: string, pluginName: string): PluginFile[] {
+  const plugins = getItems<PluginFile>({
+    path,
+    resolveItem: (path, name) => ({
+      path: `${path}/${name}`,
+      name: `${name.replace(/-./g, (x) => x[1].toUpperCase())}Plugin`,
+    }),
+    cb: (name) => console.debug(`Registering ${pluginName} plugin ${name}`),
+  });
+
+  return plugins;
+}

@@ -15,6 +15,7 @@ export class LayoutServiceFactory {
    * @returns {LayoutService} service instance
    */
   create(siteName: string): LayoutService {
+    console.log(process.env.FETCH_WITH);
     return process.env.FETCH_WITH === constants.FETCH_WITH.GRAPHQL
       ? new GraphQLLayoutService({
           endpoint: config.graphQLEndpoint,
