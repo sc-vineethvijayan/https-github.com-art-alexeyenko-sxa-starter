@@ -38,7 +38,7 @@
     "@netlify/functions": "^1.6.0",
     "@netlify/plugin-nextjs": "^4.39.4-fix-edge-runtime-on-lambda",
     "@sitecore-feaas/clientside": "^0.3.6",
-    "@sitecore-jss/sitecore-jss-nextjs": "canary",
+    "@sitecore-jss/sitecore-jss-nextjs": "^21.1.1",
     "@sitecore/engage": "^0.4.0",
     "bootstrap": "^5.1.3",
     "font-awesome": "^4.7.0",
