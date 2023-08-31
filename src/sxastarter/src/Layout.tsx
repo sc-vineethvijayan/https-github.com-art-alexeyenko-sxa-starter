@@ -26,11 +26,7 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
   const fields = route?.fields as RouteFields;
   const isPageEditing = layoutData.sitecore.context.pageEditing;
   const mainClassPageEditing = isPageEditing ? 'editing-mode' : 'prod-mode';
-  console.log('THIS IS ENV URL');
-  console.log(process.env.URL);
-  console.log(process.env.DEPLOY_PRIME_URL);
-  console.log(process.env.DEPLOY_URL);
-  console.log(process.env.DEPLOY_ID);
+
   return (
     <>
       <Scripts />
@@ -48,7 +44,6 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
           <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
         </header>
         <main>
-          <img src={`/assets/2a0.jpg`} />
           <div id="content">{route && <Placeholder name="headless-main" rendering={route} />}</div>
         </main>
         <footer>
