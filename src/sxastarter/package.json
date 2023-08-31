@@ -35,6 +35,7 @@
   "dependencies": {
     "@sitecore-feaas/clientside": "^0.3.10",
     "@sitecore-jss/sitecore-jss-nextjs": "~21.3.0-canary",
+    "@sitecore/engage": "^0.4.0",
     "bootstrap": "^5.1.3",
     "font-awesome": "^4.7.0",
     "graphql": "~15.8.0",
