@@ -27,6 +27,7 @@ export const DefaultByocComponent = (props: DefaultByocComponentProps): JSX.Elem
 
 FEAAS.External.registerComponent(DefaultByocComponent, {
   name: 'DefaultByocComponent',
+  group: 'test group',
   properties: {
     title: {
       type: 'string',
