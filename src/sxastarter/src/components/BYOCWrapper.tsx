@@ -1,4 +1,4 @@
-import { BYOCComponentProps, BYOCComponent } from '@sitecore-jss/sitecore-jss-react';
+import { BYOCComponentProps, BYOCComponent } from '@sitecore-jss/sitecore-jss-nextjs';
 import React from 'react';
 
 export const Default = (props: BYOCComponentProps): JSX.Element => {
