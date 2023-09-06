@@ -1,5 +1,5 @@
 import { ComponentBuilderPlugin, ComponentBuilderPluginConfig } from '..';
-import { PackageDefinition, getComponentList } from '@sitecore-jss/sitecore-jss-dev-tools';
+
 /**
  * Provides custom packages configuration
  */
@@ -20,16 +20,7 @@ class PackagesPlugin implements ComponentBuilderPlugin {
      *    ]
      *  }
      */
-
-    /**
-     * Or you can register all components from a path using the below approach:
-     * import { PackageDefinition, getComponentList } from '@sitecore-jss/sitecore-jss-dev-tools';
-     * ...
-     * const componentsPath = 'src/extra';
-     * config.packages = getComponentList(componentsPath) as PackageDefinition[];
-     */
-    const componentsPath = 'src/byoc';
-    config.packages = getComponentList(componentsPath) as PackageDefinition[];
+    config.packages = [];
 
     return config;
   }

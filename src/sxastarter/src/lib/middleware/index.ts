@@ -18,9 +18,6 @@ export default async function middleware(
   req: NextRequest,
   ev: NextFetchEvent
 ): Promise<NextResponse> {
-  console.log('THIS IS ENV URL');
-  console.log(process.env.URL);
-
   const response = NextResponse.next();
 
   debug.common('next middleware start');
@@ -32,5 +29,6 @@ export default async function middleware(
     .reduce((p, plugin) => p.then((res) => plugin.exec(req, res, ev)), Promise.resolve(response));
 
   debug.common('next middleware end in %dms', Date.now() - start);
+
   return finalRes;
 }
