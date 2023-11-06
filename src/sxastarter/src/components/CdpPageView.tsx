@@ -35,7 +35,7 @@ const CdpPageView = (): JSX.Element => {
       clientKey: process.env.NEXT_PUBLIC_CDP_CLIENT_KEY || '',
       targetURL: process.env.NEXT_PUBLIC_CDP_TARGET_URL || '',
       // Replace with the top level cookie domain of the website that is being integrated e.g ".example.com" and not "www.example.com"
-      cookieDomain: window.location.host.replace(/^www\./, ''),
+      cookieDomain: window.location.hostname.replace(/^www\./, ''),
       // Cookie may be created in personalize middleware (server), but if not we should create it here
       forceServerCookieMode: false,
     });
@@ -68,7 +68,7 @@ const CdpPageView = (): JSX.Element => {
       return;
     }
 
-    const siteInfo = siteResolver.getByName(site?.name || config.jssAppName);
+    const siteInfo = siteResolver.getByName(site?.name || config.siteName);
     const language = route.itemLanguage || config.defaultLanguage;
     const scope = process.env.NEXT_PUBLIC_PERSONALIZE_SCOPE;
 

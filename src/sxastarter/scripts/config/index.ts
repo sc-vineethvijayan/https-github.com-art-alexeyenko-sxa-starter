@@ -1,17 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const plugins = require('scripts/temp/config-plugins');
-
-/**
- * JSS configuration object
- */
-export interface JssConfig extends Record<string, string | undefined> {
-  sitecoreApiKey?: string;
-  sitecoreApiHost?: string;
-  jssAppName?: string;
-  graphQLEndpointPath?: string;
-  defaultLanguage?: string;
-  graphQLEndpoint?: string;
-}
+import { JssConfig } from 'lib/config';
 
 export interface ConfigPlugin {
   /**

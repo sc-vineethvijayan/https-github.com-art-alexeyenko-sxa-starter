@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PersonalizeMiddleware } from '@sitecore-jss/sitecore-jss-nextjs/middleware';
 import { MiddlewarePlugin } from '..';
-import config from 'temp/config';
+import clientFactory from 'lib/graphql-client-factory';
 import { siteResolver } from 'lib/site-resolver';
 
 /**
@@ -23,8 +23,7 @@ class PersonalizePlugin implements MiddlewarePlugin {
     this.personalizeMiddleware = new PersonalizeMiddleware({
       // Configuration for your Sitecore Experience Edge endpoint
       edgeConfig: {
-        endpoint: config.graphQLEndpoint,
-        apiKey: config.sitecoreApiKey,
+        clientFactory,
         timeout:
           (process.env.PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT &&
             parseInt(process.env.PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT)) ||
