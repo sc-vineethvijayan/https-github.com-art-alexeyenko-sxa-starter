@@ -11,6 +11,5 @@ export const HybridComponent = (): JSX.Element => {
 
 FEAAS.External.registerComponent(HybridComponent, {
   name: 'HybridComponent',
-  properties: { 
-  },
+  properties: {},
 });
