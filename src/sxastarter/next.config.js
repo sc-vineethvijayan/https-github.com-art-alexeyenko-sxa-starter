@@ -57,8 +57,8 @@ const nextConfig = {
   images: {
     remotePatterns: 
       process.env.NODE_ENV === 'development' || process.env.SITECORE ? 
-       remotePatternsDev : 
-       remotePatternsProd
+      remotePatternsProd:
+      remotePatternsDev       
   },
 
   async rewrites() {
