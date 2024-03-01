@@ -6,7 +6,7 @@ const publicUrl = jssConfig.publicUrl;
 // Less secure pattern will be used in development and editing
 const remotePatternsDev = [
   {
-    protocol: '*',
+    protocol: 'https',
     hostname: '*',
     port: '',
   }
