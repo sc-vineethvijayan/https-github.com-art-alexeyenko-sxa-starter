@@ -13,8 +13,8 @@ type ImageProps = {
 // Nextjs image implementation will be used when img is rendered in component from Component Builder
 FEAAS.setElementImplementation('img', (attributes: ImageProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { src, alt, children, ...imgAttributes } = attributes;
-  return <Image height={1920} width={1200} src={src} alt={alt} {...imgAttributes} />;
+  const { children, ...imgAttributes } = attributes;
+  return <Image height={1920} width={1200} {...imgAttributes} />;
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
