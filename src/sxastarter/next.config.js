@@ -56,7 +56,7 @@ const nextConfig = {
   // see https://nextjs.org/docs/app/api-reference/components/image#remotepatterns
   images: {
     remotePatterns: 
-      process.env.NODE_ENV === 'development' ? 
+      process.env.NODE_ENV === 'development' || process.env.SITECORE ? 
        remotePatternsDev : 
        remotePatternsProd
   },
